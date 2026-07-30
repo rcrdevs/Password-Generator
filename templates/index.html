@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gerador_senha.exe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="crt">
+        <div class="crt__scanlines" aria-hidden="true"></div>
+        <div class="crt__vignette" aria-hidden="true"></div>
+
+        <main class="term">
+            <p class="term__line">C:\GERADOR&gt; iniciar --senha</p>
+            <h1 class="term__title">GERADOR DE SENHA</h1>
+            <p class="term__line">Digite o comprimento e pressione GERAR.</p>
+
+            <div class="term__row">
+                <label for="length" class="term__label">comprimento:</label>
+                <input type="number" id="length" class="term__input"
+                       min="{{ min_length }}" max="{{ max_length }}" value="{{ default_length }}">
+                <button id="generate-btn" class="term__btn">[ GERAR ]</button>
+            </div>
+
+            <div class="term__output" id="output-wrap" hidden>
+                <span class="term__prompt">$&nbsp;</span>
+                <span id="password-output" class="term__password"></span>
+                <span class="term__cursor" aria-hidden="true">█</span>
+            </div>
+
+            <button id="copy-btn" class="term__btn term__btn--copy" hidden>[ COPIAR ]</button>
+            <p id="copy-feedback" class="term__feedback" hidden>copiado para a área de transferência.</p>
+            <p id="error-feedback" class="term__feedback term__feedback--error" hidden></p>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

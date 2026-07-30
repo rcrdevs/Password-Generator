@@ -1,0 +1,8 @@
+services:
+  password-generator:
+    build: .
+    image: password-generator:latest
+    container_name: password-generator
+    restart: unless-stopped
+    ports:
+      - "${PORT:-5100}:5100"
