@@ -33,21 +33,4 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Acesse **http://localhost:5100**.
 
-## Adicionando na Oficina
-
-```python
-{
-    "id": "password-generator",
-    "codigo": "PG-01",
-    "nome": "Gerador de Senha",
-    "tagline": "Gera senhas aleatórias com o módulo criptográfico do Python.",
-    "descricao": "Interface retrô em terminal CRT para gerar e copiar senhas — usa secrets.choice, não random.randint.",
-    "status": "estável",
-    "tags": ["Python", "Flask", "Segurança"],
-    "url_env": "PASSWORD_GENERATOR_URL",
-    "url_default": "http://localhost:5100",
-    "embeddable": True,
-}
-```
